@@ -14,11 +14,22 @@ public class UserRegistrationTest {
 
     @Test
     public void testValidFirstName() {
-        assertTrue(userRegistration.validateFirstName("Prabha"));
+        assertEquals(true,userRegistration.validateFirstName("Prabha"));
     }
 
     @Test
     public void testInvalidFirstName() {
-        assertFalse(userRegistration.validateFirstName("pr")); // Too short & lowercase
+
+        assertEquals(true,userRegistration.validateFirstName("pr"));
+    }
+
+    @Test
+    public void testValidLastName() {
+        assertEquals(true,userRegistration.validateLastName("Kumar"));
+    }
+
+    @Test
+    public void testInvalidLastName() {
+        assertEquals(true,userRegistration.validateLastName("kumar"));
     }
 }

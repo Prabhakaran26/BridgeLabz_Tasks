@@ -11,6 +11,10 @@ public class UserRegistration {
         return Pattern.matches(NAME_REGEX, firstName);
     }
 
+    public boolean validateLastName(String lastName) {
+        return Pattern.matches(NAME_REGEX, lastName);
+    }
+
     public static void main(String[] args){
         UserRegistration ur = new UserRegistration();
         System.out.println(ur.validateFirstName("Prabhakaran"));
