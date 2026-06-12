@@ -7,6 +7,11 @@ class InvalidException extends Exception {
     }
 }
 
+@FunctionalInterface
+interface UserValidation {
+    boolean validate(String input) throws InvalidException;
+}
+
 
 public class UserRegistration {
     private static final String NAME_REGEX = "^[A-Z][a-zA-Z]{2,}$";
@@ -22,7 +27,6 @@ public class UserRegistration {
         }
         return true;
     }
-    // (Do this same exact if-statement logic for LastName, Email, Mobile, and Password)
 
     public boolean validateLastName(String lastName) throws InvalidException {
         if (!Pattern.matches(NAME_REGEX, lastName)) {

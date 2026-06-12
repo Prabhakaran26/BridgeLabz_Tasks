@@ -114,7 +114,7 @@ public class UserRegistrationTest {
     @Test
     public void testInvalidPassword() {
         try {
-            userRegistration.validatePassword("secret1!"); // Missing Capital Letter
+            userRegistration.validatePassword("secret1!");
             fail("Invalid ,It throws an Exception!");
         } catch (InvalidException e) {
             assertEquals("Invalid Password", e.getMessage());
